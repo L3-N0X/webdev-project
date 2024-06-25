@@ -1,0 +1,12 @@
+{
+    "name": "webdev-project",
+    "version": "1.0.0",
+    "description": "A project for the webdev workshop",
+    "scripts": {},
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "eslint": "^9.5.0",
+        "prettier": "^3.3.2"
+    }
+}
