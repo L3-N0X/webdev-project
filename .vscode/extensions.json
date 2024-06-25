@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "usernamehw.errorlens",
+        "christian-kohler.npm-intellisense",
+        "christian-kohler.path-intellisense",
+        "rvest.vs-code-prettier-eslint",
+        "Zignd.html-css-class-completion"
+    ]
+}
