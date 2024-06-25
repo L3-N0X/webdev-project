@@ -16,8 +16,8 @@ export default [
             ...html.configs["flat/recommended"].rules, // Must be defined. If not, all recommended rules will be lost
             "@html-eslint/indent": "error",
             "@html-eslint/no-inline-styles": "error",
-            "@html-eslint/no-multiple-h1": "off",
-            "@html-eslint/require-img-alt": "off",
+            "@html-eslint/no-multiple-h1": "error",
+            "@html-eslint/require-img-alt": "error",
             "@html-eslint/require-closing-tags": ["error", { selfClosing: "always" }],
             "@html-eslint/no-extra-spacing-attrs": ["error", { enforceBeforeSelfClose: true }],
             "@html-eslint/no-duplicate-attrs": "error",
