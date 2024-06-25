@@ -2,11 +2,18 @@
     "name": "webdev-project",
     "version": "1.0.0",
     "description": "A project for the webdev workshop",
-    "scripts": {},
+    "scripts": {
+        "lint": "eslint ."
+    },
     "author": "",
     "license": "ISC",
-    "dependencies": {
+    "devDependencies": {
+        "@eslint/js": "^9.5.0",
+        "@html-eslint/eslint-plugin": "^0.25.0",
+        "@html-eslint/parser": "^0.25.0",
         "eslint": "^9.5.0",
+        "eslint-plugin-css": "^0.10.0",
+        "globals": "^15.6.0",
         "prettier": "^3.3.2"
     }
 }
