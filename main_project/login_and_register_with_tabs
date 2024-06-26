@@ -68,8 +68,36 @@
               <div class="left-content">
                 <!-- Inhalt der linken Hälfte -->
                 <div class="tab">
-                    <a class="tab-links" href="login.html">Login</a>
-                    <a class="tab-links active">Registrieren</a>
+                    <button class="tab-links active" onclick="switchTab(event, 'Login')">Login</button>
+                    <button class="tab-links" onclick="switchTab(event, 'Register')">Registrieren</button>
+                </div>
+                <div id="Login" class="tab-content" style="display: block;">
+                    <!-- Beginn des Login-Formulars -->
+                    <form onsubmit="return validateLogin()">
+                        <!-- Formularbereich für den Benutzernamen -->
+                        <div>
+                            <!-- Label für das Eingabefeld des Benutzernamens -->
+                            <label for="username">Benutzername:</label>
+                            <!-- Eingabefeld für den Benutzernamen; 'required' macht das Feld zur Pflichteingabe -->
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <!-- Formularbereich für das Passwort -->
+                        <div>
+                            <!-- Label für das Eingabefeld des Passworts -->
+                            <label for="password">Passwort:</label>
+                            <!-- Eingabefeld für das Passwort; 'required' macht das Feld zur Pflichteingabe -->
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <!-- Link zum Zurücksetzen des Passworts -->
+                        <div>
+                            <a href="/passwort-zuruecksetzen">Passwort zurücksetzen</a>
+                        </div>
+                        <!-- Button zum Einloggen -->
+                        <div>
+                            <button type="submit">Einloggen</button>
+                        </div>
+                    </form>
+                    <!-- Ende des Login-Formulars -->
                 </div>
 
                 <!-- Beginn des Registrierungsformulars -->

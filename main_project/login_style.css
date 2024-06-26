@@ -30,3 +30,60 @@ body, html {
 .left-content, .right-content {
   padding: 20px;
 }
+
+/* Tabs oben ausrichten */
+.tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px; /* Abstand zwischen den Tabs und dem Content */
+}
+
+/* Hover-Animation, wenn man über den nicht aktiven Tab hovert
+   Leichtere Mölgichkeit ohne Animation
+
+.tab a:hover {
+  border-bottom: 3px solid rgba(255, 166, 0, 0.265); // Tab bekommt eine orangene Linie, wenn aktiv 
+} */
+
+/* Tab-Links standard-Designs überschreiben*/
+.tab a{
+  color: black; /* Link wird standartmäßig in blau angezeigt => wechsel zu schwarz */
+  text-decoration: none; /* Unterstrich vom Link entfernen */
+  padding-bottom: 2px;
+}
+
+/* Hover-Animation, wenn man über den nicht aktiven Tab hovert */
+.tab a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  margin-top: 3px;
+  background-color: rgba(255, 166, 0, 0.265);
+  transition: width 0.3s ease;
+}
+
+.tab a:hover::after {
+  width: 100%;
+}
+
+/* Allgemeiner CSS-Stil für Tab-Links */
+.tab-links {
+  padding: 10px 20px; /* Innerer Abstand um den Text */
+  cursor: pointer; /* Cursor wird beim Hovern angezeigt */
+  margin-right: 5px; /* Kleiner Abstand zwischen den Tabs */
+}
+
+/* Stil für den aktiven Tab-Link 
+.tab-links.active {
+  border-bottom: 3px solid orange; // Tab bekommt eine orangene Linie, wenn aktiv 
+} */
+
+/* Stil für den aktiven Tab-Link */
+.tab-links.active::after {
+  width: 100%;
+  background-color: rgb(255, 166, 0);
+}
+
+
