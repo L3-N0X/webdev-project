@@ -1,0 +1,32 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.left, .right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  background-color: #f2f2f2;
+}
+
+.right {
+  background-image: url('../src/example_background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.left-content, .right-content {
+  padding: 20px;
+}

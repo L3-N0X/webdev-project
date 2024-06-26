@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- Hier folgt das eingebettete JavaScript -->
+    <script>
+        function validateLogin() {
+            var benutzer = 'Test'; // Variable, in der der einzige gültige Benutzer festgelegt wird.
+            var passwort = '1234'; // Variable, in der das einzige gültige Passwort festgelegt wird.
+
+            var usernameInput = document.getElementById('username').value; // Variable, die den Wert des Benutzername-Input-Feldes beinhaltet
+            var passwordInput = document.getElementById('password').value; // Variable, die den Wert des Passwort-Input-Feldes beinhaltet
+
+            if(usernameInput === benutzer && passwordInput === passwort) {
+                // Wenn Benutzername und Passwort übereinstimmen, Weiterleitung zur index.html
+                window.location.href = 'index.html';
+            } else {
+                // Wenn die Eingaben nicht übereinstimmen, zeige eine Fehlermeldung an
+                alert('Benutzername oder Passwort falsch!'); // alert ist ein Pop-up
+            }
+
+            // Verhindere das normale Absenden des Formulars
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <!-- Beginn des Login-Formulars -->
+    <form onsubmit="return validateLogin()">
+        <!-- Formularbereich für den Benutzernamen -->
+        <div>
+            <!-- Label für das Eingabefeld des Benutzernamens -->
+            <label for="username">Benutzername:</label>
+            <!-- Eingabefeld für den Benutzernamen; 'required' macht das Feld zur Pflichteingabe -->
+            <input type="text" id="username" name="username" required>
+        </div>
+        <!-- Formularbereich für das Passwort -->
+        <div>
+            <!-- Label für das Eingabefeld des Passworts -->
+            <label for="password">Passwort:</label>
+            <!-- Eingabefeld für das Passwort; 'required' macht das Feld zur Pflichteingabe -->
+            <input type="password" id="password" name="password" required>
+        </div>
+        <!-- Link zum Zurücksetzen des Passworts -->
+        <div>
+            <a href="/passwort-zuruecksetzen">Passwort zurücksetzen</a>
+        </div>
+        <!-- Button zum Einloggen -->
+        <div>
+            <button type="submit">Einloggen</button>
+        </div>
+    </form>
+    <!-- Ende des Login-Formulars -->
+
+</body>
+</html>

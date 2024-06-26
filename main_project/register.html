@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login_style.css">
+    <title>Login</title>
+        <!-- Hier folgt das eingebettete JavaScript -->
+        <script>
+            function validateLogin() {
+                // Variable, in der mehrere Passwörter gespeichert werden können, die später in Kombination abgeglichen werden können
+                var userCredentials = {
+                    'Benutzer1': 'Passwort1',
+                    'Benutzer2': 'Passwort2'
+                    // Hierbei handelt es sich um ein Dictionary und es können beliebig viele weitere Kombinationen wie folgt eingefügt werden:
+                    // 'Benutzername': 'Passwort',
+                };
+    
+                var usernameInput = document.getElementById('username').value; // Variable, die den Wert des Benutzername-Input-Feldes beinhaltet
+                var passwordInput = document.getElementById('password').value; // Variable, die den Wert des Passwort-Input-Feldes beinhaltet
+    
+                // Prüfe, ob der eingegebene Benutzername im Objekt existiert und das jeweilige Passwort übereinstimmt
+                if(userCredentials[usernameInput] === passwordInput) {
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Benutzername oder Passwort falsch!');
+                }
+    
+                return false; // Verhindere das normale Absenden des Formulars
+            }
+
+            function registerUser() {
+                // Vorbereitung, um die den User ggf. auf einem Server zu registrieren
+                var username = document.getElementById('reg-username').value;
+                var email = document.getElementById('reg-email').value;
+                var password = document.getElementById('reg-password').value;
+                var confirmPassword = document.getElementById('reg-confirm-password').value;
+
+                // Prüfung, ob die Passwörter übereinstimmen
+                if(password !== confirmPassword) {
+                    alert('Die Passwörter stimmen nicht überein.');
+                    return false;
+            }
+
+            function switchTab(evt, tabName) {
+            // Verberge alle Tab-Inhalte
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Entferne die aktive Klassen von allen Tabs
+            tablinks = document.getElementsByClassName("tab-links");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Zeige den aktuellen Tab-Inhalt an und füge die 'active' Klasse dem geöffneten Tab hinzu
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left">
+              <div class="left-content">
+                <!-- Inhalt der linken Hälfte -->
+                <div class="tab">
+                    <button class="tab-links active" onclick="switchTab(event, 'Login')">Login</button>
+                    <button class="tab-links" onclick="switchTab(event, 'Register')">Registrieren</button>
+                </div>
+                <div id="Login" class="tab-content" style="display: block;">
+                    <!-- Beginn des Login-Formulars -->
+                    <form onsubmit="return validateLogin()">
+                        <!-- Formularbereich für den Benutzernamen -->
+                        <div>
+                            <!-- Label für das Eingabefeld des Benutzernamens -->
+                            <label for="username">Benutzername:</label>
+                            <!-- Eingabefeld für den Benutzernamen; 'required' macht das Feld zur Pflichteingabe -->
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <!-- Formularbereich für das Passwort -->
+                        <div>
+                            <!-- Label für das Eingabefeld des Passworts -->
+                            <label for="password">Passwort:</label>
+                            <!-- Eingabefeld für das Passwort; 'required' macht das Feld zur Pflichteingabe -->
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <!-- Link zum Zurücksetzen des Passworts -->
+                        <div>
+                            <a href="/passwort-zuruecksetzen">Passwort zurücksetzen</a>
+                        </div>
+                        <!-- Button zum Einloggen -->
+                        <div>
+                            <button type="submit">Einloggen</button>
+                        </div>
+                    </form>
+                    <!-- Ende des Login-Formulars -->
+                </div>
+
+                <!-- Beginn des Registrierungsformulars -->
+                <div id="Register" class="tab-content" display="none">
+                    <form id="registrationForm" onsubmit="return registerUser()">
+                        <!-- Formularbereich für den Benutzernamen -->
+                        <div>
+                            <label for="reg-username">Benutzername:</label>
+                            <input type="text" id="reg-username" name="username" required>
+                        </div>
+                        <!-- Formularbereich für die E-Mail-Adresse -->
+                        <div>
+                            <label for="reg-email">E-Mail:</label>
+                            <input type="email" id="reg-email" name="email" required>
+                        </div>
+                        <!-- Formularbereich für das Passwort -->
+                        <div>
+                            <label for="reg-password">Passwort:</label>
+                            <input type="password" id="reg-password" name="password" required>
+                        </div>
+                        <!-- Formularbereich für die Passwortbestätigung -->
+                        <div>
+                            <label for="reg-confirm-password">Passwort bestätigen:</label>
+                            <input type="password" id="reg-confirm-password" name="confirm-password" required>
+                        </div>
+                        <!-- Button zum Registrieren -->
+                        <div>
+                            <button type="submit">Registrieren</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Ende des Registrierungsformulars -->
+                
+              </div>
+            </div>
+            <div class="right">
+              <div class="right-content">
+                <!-- Inhalt der rechten Hälfte // Bild wird durch CSS eingefügt -->
+              </div>
+            </div>
+          </div>
+        
+    </body>
+    </html>
