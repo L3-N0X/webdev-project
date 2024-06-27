@@ -1,6 +1,9 @@
 :root {
-    --background: #1e2c48;
-    --accent: #ffc175;
+    --background: #2d3250;
+    --surface: #424769;
+    --hint: #676c8f;
+    --accent: #ffb17a;
+    --text: #ffffff;
 }
 
 body {
@@ -13,6 +16,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 16px 50px;
 }
 
 .navbar .icon {
@@ -20,4 +24,14 @@ body {
     padding: 32px;
     color: var(--accent);
     cursor: pointer;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(50%);
 }
