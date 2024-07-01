@@ -1,8 +1,41 @@
+:root{
+  /* Vordefinierte Farbcodes */
+  --dark_blue: #2D3250;
+  --blue: #424769;
+  --light_blue: #676C8F;
+  --orange: #FFB17A;
+  --white: #ffffff;
+
+  /* Vordefinierte URLs */
+  --background_img: url('../src/example_background.jpg');
+}
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
+}
+
+/* Default Textfeld-Design entfernen */
+.login_form input[type="text"],
+.login_form input[type="email"],
+.login_form input[type="password"],
+.login_form textarea { 
+  border: none;
+  padding: 4px;
+  outline: none;
+  background: none;
+  color: var(--white);
+}
+
+.login_form textarea:active .single_input_field_box { 
+  border-left: var(--orange);
+}
+
+p, a {
+  color: var(--white);
+  /* Text wird standartmäßig in schwarz angezeigt => wechsel zu hellgrau */
+  /* Link wird standartmäßig in blau angezeigt => wechsel zu hellgrau */
 }
 
 .container {
@@ -18,11 +51,11 @@ body, html {
 }
 
 .left {
-  background-color: #f2f2f2;
+  background-color: var(--dark_blue);
 }
 
 .right {
-  background-image: url('../src/example_background.jpg');
+  background-image: var(--background_img);
   background-size: cover;
   background-position: center;
 }
@@ -48,7 +81,6 @@ body, html {
 
 /* Tab-Links standard-Designs überschreiben*/
 .tab a{
-  color: black; /* Link wird standartmäßig in blau angezeigt => wechsel zu schwarz */
   text-decoration: none; /* Unterstrich vom Link entfernen */
   padding-bottom: 2px;
 }
@@ -86,4 +118,20 @@ body, html {
   background-color: rgb(255, 166, 0);
 }
 
+/* Input fields */ 
+.single_input_field_box {
+  background-color: var(--blue);
 
+}
+
+.single_input_field_box p {
+  color: var(--light_blue)
+}
+
+.single_input_field_box input{
+  background-color: none !important;
+}
+
+.single_input_field_box input:active .single_input_field_box{
+  border-left: var(--orange) 3px;
+}

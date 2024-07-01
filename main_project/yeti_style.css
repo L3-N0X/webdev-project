@@ -76,7 +76,7 @@ form {
 		.helper1 {
 			top: 0; left: 0;
 			transform: translate(1.4em, 2.6em) scale(1); transform-origin: 0 0;
-			color: --darkBlue; font-size: 1.25em; font-weight: 400; opacity: .65;
+			color: var(--darkBlue); font-size: 1.25em; font-weight: 400; opacity: .65;
 			pointer-events: none;
 			transition: transform .2s ease-out, opacity .2s linear;
 		}
