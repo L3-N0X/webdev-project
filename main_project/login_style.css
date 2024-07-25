@@ -10,28 +10,6 @@
   --background_img: url('../src/3369d3c9bd04f556f40ca43030cde814.jfif');
   
 }
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-}
-
-/* Default Textfeld-Design entfernen */
-.login_form input[type="text"],
-.login_form input[type="email"],
-.login_form input[type="password"],
-.login_form textarea { 
-  border: none;
-  padding: 4px;
-  outline: none;
-  background: none;
-  color: var(--white);
-}
-
-.login_form textarea:active .single_input_field_box { 
-  border-left: var(--orange);
-}
 
 p, a {
   color: var(--white);
@@ -128,20 +106,122 @@ box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.20),
   background-color: rgb(255, 166, 0);
 }
 
-/* Input fields */ 
+/* Allgemeine Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left,
+.right {
+  flex: 1;
+}
+
+.left-content,
+.right-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles für den Tab-Bereich */
+.tab {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab-links {
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  text-decoration: none;
+  color: #333;
+  border-radius: 5px 5px 0 0;
+}
+
+.tab-links.active {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Styles für das Login-Formular */
+.login_form {
+  padding: 30px;
+}
+
 .single_input_field_box {
   background-color: var(--blue);
-
+  margin-bottom: 20px;
+  border-radius: 4px;
 }
 
 .single_input_field_box p {
-  color: var(--light_blue)
+  padding: 5px;
+  /*font-weight: bold; */
 }
 
-.single_input_field_box input{
-  background-color: none !important;
+.input-wrapper input {
+  width: 300px;
+  padding: 10px 15px;
+  margin-top: -20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  /*background-color: #f1f9ff;
+  
+  transition: background-color 0.3s ease;
+  */
 }
 
-.single_input_field_box input:active .single_input_field_box{
-  border-left: var(--orange) 3px;
+.input-wrapper input:focus {
+  
+}
+
+.input-wrapper input::placeholder {
+  color: var(--light_blue);
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+.input-wrapper input:not(:placeholder-shown) + ::placeholder {
+  top: 0;
+  font-size: 12px;
+  color: #888;
+}
+
+.password-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #ff8c00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #e67300;
 }

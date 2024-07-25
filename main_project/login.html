@@ -5,52 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login_style.css">
     <title>Login</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="left">
-              <div class="left-content">
-                <!-- Inhalt der linken Hälfte -->
-                <div class="tab">
-                    <a class="tab-links active">Login</a>
-                    <a class="tab-links"href="register.html">Registrieren</a>
-                </div>
-                <div>
-                    <!-- Beginn des Login-Formulars -->
-                    <form onsubmit="return validateLogin()" class="login_form">
-                        <!-- Formularbereich für den Benutzernamen -->
-                        <div class="single_input_field_box">
-                            <!-- Label für das Eingabefeld des Benutzernamens -->
-                             <p>e-mail</p>
-                            <!-- Eingabefeld für den Benutzernamen; 'required' macht das Feld zur Pflichteingabe -->
-                            <input type="text" id="username" name="username" required>
-                        </div>
-                        <!-- Formularbereich für das Passwort -->
-                        <div class="single_input_field_box">
-                            <!-- Label für das Eingabefeld des Passworts -->
-                            <p>password</p>
-                            <!-- Eingabefeld für das Passwort; 'required' macht das Feld zur Pflichteingabe -->
-                            <input type="password" id="password" name="password" required>
-                        </div>
-                        <!-- Link zum Zurücksetzen des Passworts -->
-                        <div>
-                            <a href="/passwort-zuruecksetzen">forgot password</a>
-                        </div>
-                        <!-- Button zum Einloggen -->
-                        <div>
-                            <button type="submit">Einloggen</button>
-                        </div>
-                    </form>
-                    <!-- Ende des Login-Formulars -->
-                </div>
-              </div>
-            </div>
-            <div class="right">
-              <div class="right-content">
-                <!-- Inhalt der rechten Hälfte // Bild wird durch CSS eingefügt -->
-              </div>
-            </div>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="left-content">
+          <div class="tab">
+            <a class="tab-links active">Login</a>
+            <a class="tab-links" href="register.html">Registrieren</a>
           </div>
-          <script src="login.js"></script>
-    </body>
-    </html>
+          <div>
+            <form onsubmit="return validateLogin()" class="login_form">
+              <div class="single_input_field_box">
+                <p>e-mail</p>
+                <div class="input-wrapper">
+                  <input type="text" id="username" name="username" required placeholder="E-Mail-Adresse">
+                </div>
+              </div>
+              <div class="single_input_field_box">
+                <p>password</p>
+                <div class="input-wrapper password-wrapper">
+                  <input type="password" id="password" name="password" required placeholder="Passwort">
+                  <div class="password-toggle">
+                    <i class="fas fa-eye"></i>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <a href="/passwort-zuruecksetzen">forgot password</a>
+              </div>
+              <div>
+                <button type="submit" class="submit-button">Einloggen</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-content">
+          <!-- Inhalt der rechten Hälfte // Bild wird durch CSS eingefügt -->
+        </div>
+      </div>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>
