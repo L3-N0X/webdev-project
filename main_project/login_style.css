@@ -7,7 +7,8 @@
   --white: #ffffff;
 
   /* Vordefinierte URLs */
-  --background_img: url('../src/example_background.jpg');
+  --background_img: url('../src/3369d3c9bd04f556f40ca43030cde814.jfif');
+  
 }
 body, html {
   margin: 0;
@@ -57,7 +58,16 @@ p, a {
 .right {
   background-image: var(--background_img);
   background-size: cover;
-  background-position: center;
+  background-position: left;
+  -webkit-filter: brightness(0.8) contrast(1.2);
+	filter: brightness(0.8) contrast(1.2);
+
+/* Elevation/modal */
+box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.20), 
+            0px 16px 40px 0px rgba(0, 0, 0, 0.10), 
+            0px 20px 48px 0px rgba(0, 0, 0, 0.10), 
+            0px 24px 56px 0px rgba(0, 0, 0, 0.10);
+
 }
 
 .left-content, .right-content {
