@@ -16,21 +16,29 @@
           </div>
           <div>
             <form onsubmit="return validateLogin()" class="login_form">
-              <div class="single_input_field_box">
-                <p>e-mail</p>
-                <div class="input-wrapper">
-                  <input type="text" id="username" name="username" required placeholder="E-Mail-Adresse">
-                </div>
-              </div>
-              <div class="single_input_field_box">
-                <p>password</p>
-                <div class="input-wrapper password-wrapper">
-                  <input type="password" id="password" name="password" required placeholder="Passwort">
-                  <div class="password-toggle">
-                    <i class="fas fa-eye"></i>
+              
+                <div class="single_input_field_box">
+                  <div>
+                    <p>e-mail</p>
+                  </div>
+                  <div class="input-wrapper">
+                    <input type="text" id="username" name="username" required placeholder="E-Mail-Adresse">
                   </div>
                 </div>
-              </div>
+              
+              
+                <div class="single_input_field_box">
+                  <div>
+                    <p>password</p>
+                  </div>
+                  <div class="input-wrapper password-wrapper">
+                    <input type="password" id="password" name="password" required placeholder="Passwort">
+                    <div class="password-toggle">
+                      <i class="fas fa-eye"></i>
+                    </div>
+                  </div>
+                </div>
+              
               <div>
                 <a href="/passwort-zuruecksetzen">forgot password</a>
               </div>
