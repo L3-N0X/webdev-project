@@ -1,60 +1,283 @@
-<!DOCTYPE html>
-<html lang="de">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login_style.css">
-    <title>Login</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="left">
-        <div class="left-content">
-          <div class="tab">
-            <a class="tab-links active">Login</a>
-            <a class="tab-links" href="register.html">Registrieren</a>
-          </div>
-          <div>
-            <form onsubmit="return validateLogin()" class="login_form">
-              
-                <div class="single_input_field_box">
-                    <div class=>
-                      <p>E-mail</p>
-                    </div>
-                    <div class="input-wrapper">
-                      <input type="text" id="username" name="username" required placeholder="E-Mail-Adresse">
-                    </div>
-                </div>
-              
-              
-                <div class="single_input_field_box">
-                  <div>
-                    <p>Password</p>
-                  </div>
-                  <div class="input-wrapper password-wrapper">
-                    <input type="password" id="password" name="password" required placeholder="Passwort">
-                    <div class="password-toggle">
-                      <i class="fas fa-eye"></i>
-                    </div>
-                  </div>
-                </div>
-              
-              <div>
-                <a href="/passwort-zuruecksetzen">forgot password</a>
-              </div>
-              <div>
-                <button type="submit" class="submit-button">Einloggen</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="right">
-        <div class="right-content">
-          <!-- Inhalt der rechten Hälfte // Bild wird durch CSS eingefügt -->
-        </div>
-      </div>
-    </div>
-    <script src="login.js"></script>
-  </body>
-</html>
+:root{
+  /* Vordefinierte Farbcodes */
+  --dark_blue: #2D3250;
+  --blue: #424769;
+  --light_blue: #676C8F;
+  --orange: #FFB17A;
+  --white: #ffffff;
+
+  /* Vordefinierte URLs */
+  --background_img: url('../src/3369d3c9bd04f556f40ca43030cde814.jfif');
+  
+}
+
+p, a {
+  color: var(--white);
+  /* Text wird standartmäßig in schwarz angezeigt => wechsel zu hellgrau */
+  /* Link wird standartmäßig in blau angezeigt => wechsel zu hellgrau */
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.left, .right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left {
+  background-color: var(--dark_blue);
+}
+
+.right {
+  background-image: var(--background_img);
+  background-size: cover;
+  background-position: left;
+  -webkit-filter: brightness(0.8) contrast(1.2);
+	filter: brightness(0.8) contrast(1.2);
+
+/* Elevation/modal */
+box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.20), 
+            0px 16px 40px 0px rgba(0, 0, 0, 0.10), 
+            0px 20px 48px 0px rgba(0, 0, 0, 0.10), 
+            0px 24px 56px 0px rgba(0, 0, 0, 0.10);
+
+}
+
+.left-content, .right-content {
+  padding: 20px;
+}
+
+/* Tabs oben ausrichten */
+.tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px; /* Abstand zwischen den Tabs und dem Content */
+}
+
+/* Hover-Animation, wenn man über den nicht aktiven Tab hovert
+   Leichtere Mölgichkeit ohne Animation
+
+.tab a:hover {
+  border-bottom: 3px solid rgba(255, 166, 0, 0.265); // Tab bekommt eine orangene Linie, wenn aktiv 
+} */
+
+/* Tab-Links standard-Designs überschreiben*/
+.tab a{
+  text-decoration: none; /* Unterstrich vom Link entfernen */
+  font-size: 16px;
+}
+
+/* Hover-Animation, wenn man über den nicht aktiven Tab hovert */
+.tab a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  margin-top: 3px;
+  background-color: rgba(255, 166, 0, 0.265);
+  transition: width 0.3s ease;
+}
+
+.tab a:hover::after {
+  width: 100%;
+}
+
+/* Allgemeiner CSS-Stil für Tab-Links */
+.tab-links {
+  padding: 10px 20px; /* Innerer Abstand um den Text */
+  cursor: pointer; /* Cursor wird beim Hovern angezeigt */
+  margin-right: 5px; /* Kleiner Abstand zwischen den Tabs */
+}
+
+/* Stil für den aktiven Tab-Link 
+.tab-links.active {
+  border-bottom: 3px solid orange; // Tab bekommt eine orangene Linie, wenn aktiv 
+} */
+
+/* Stil für den aktiven Tab-Link */
+.tab-links.active::after {
+  width: 100%;
+  background-color: rgb(255, 166, 0);
+}
+
+/* Allgemeine Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left,
+.right {
+  flex: 1;
+}
+
+.left-content,
+.right-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles für den Tab-Bereich */
+.tab {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab-links {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 5px 5px 0 0;
+}
+
+/* Styles für das Login-Formular */
+
+.single_input_field_box {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;  
+  background-color: var(--blue);
+  height: 60px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+/* Standardzustand für die p-Tags */
+.single_input_field_box p {
+  margin: 0;
+  margin-bottom: -40px;
+  color: transparent;
+  padding: 10px 15px 0 15px;
+  opacity: 0;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  to {
+      margin-bottom: 0;
+      opacity: 1;
+      color: var(--light_blue);
+  }
+}
+
+/* Aktivierungszustand */
+.single_input_field_box:focus-within p {
+  display: block;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.single_input_field_box:focus-within input::placeholder {
+  color: transparent;
+}
+
+/* Standardstil für den p-Tag */
+.single_input_field_box p {
+  color: var(--light_blue);
+  font-size: 10px;
+  font-weight: normal;
+}
+
+/* Stil ändern, wenn die Klasse active vorhanden ist */
+.single_input_field_box.active p {
+  display: block;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 300px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 25px 15px;
+  margin-top: -15px;
+  margin-bottom: -15px;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--white);
+}
+
+/* Removes input border on click */
+.input-wrapper input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: var(--light_blue);
+  pointer-events: none; /* Verhindert, dass der Platzhalter selbst anklickbar ist */
+  transition: all 0.3s ease-in;
+}
+
+.forgot-password-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+
+.forgot-password-wrapper a {
+  font-size: 10px;
+  color: var(--light_blue) !important;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.password-toggle:focus {
+  outline: none;
+}
+
+.eye-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--light_blue);
+}
+
+/* Submit Button Design */
+.submit-button {
+  min-width: 20%;
+  padding: 10px 15px;
+  background-color: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #e67300;
+}

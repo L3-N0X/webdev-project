@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <!-- 1. Füge den Titel "Login" als Meta-Tag ein -->
+     
+</head>
+<body>
+    <!-- 2. Erstelle eine einfache Login-Struktur mit den Elementen (Tags), die du gerade gelernt hast (ohne weitere Funktionalität) -->
+    <!-- Die folgenden Felder sollte im Anmelde-Formular enthalten sein: Benutzername, Passwort und ein Link mit mit dem Namen "Passwort zurücksetzen" -->
+    <!-- Hilfe: Du kannst die folgenden Tags könnten für die Aufgabe hilfreich sein: form, label, input, button, div -->
+
+</body>
+</html>

@@ -1,60 +1,61 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login_style.css">
     <title>Login</title>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <div class="left">
-        <div class="left-content">
-          <div class="tab">
-            <a class="tab-links active">Login</a>
-            <a class="tab-links" href="register.html">Registrieren</a>
-          </div>
-          <div>
-            <form onsubmit="return validateLogin()" class="login_form">
-              
-                <div class="single_input_field_box">
-                  <div>
-                    <p>e-mail</p>
-                  </div>
-                  <div class="input-wrapper">
-                    <input type="text" id="username" name="username" required placeholder="E-Mail-Adresse">
-                  </div>
+        <div class="left">
+            <div class="left-content">
+                <div class="tab">
+                    <a class="tab-links active">Login</a>
+                    <a class="tab-links" href="register.html">Registrieren</a>
                 </div>
-              
-              
-                <div class="single_input_field_box">
-                  <div>
-                    <p>password</p>
-                  </div>
-                  <div class="input-wrapper password-wrapper">
-                    <input type="password" id="password" name="password" required placeholder="Passwort">
-                    <div class="password-toggle">
-                      <i class="fas fa-eye"></i>
-                    </div>
-                  </div>
+                <div>
+                  <h3 style="margin-bottom: -20px;">We define the future</h3>
+                  <p>The blog for creating a better world</p>
                 </div>
-              
-              <div>
-                <a href="/passwort-zuruecksetzen">forgot password</a>
-              </div>
-              <div>
-                <button type="submit" class="submit-button">Einloggen</button>
-              </div>
-            </form>
-          </div>
+                <div>
+                    <form onsubmit="return validateLogin()" class="login_form">
+                        <div class="single_input_field_box">
+                            <div>
+                                <p>E-mail</p>
+                            </div>
+                            <div class="input-wrapper">
+                                <input type="text" id="username" name="username" required placeholder="E-Mail-Adresse">
+                            </div>
+                        </div>
+                        <div class="single_input_field_box">
+                            <div>
+                                <p>Password</p>
+                            </div>
+                            <div class="input-wrapper password-wrapper">
+                                <input type="password" id="password" name="password" required placeholder="Passwort">
+                                <button type="button" class="password-toggle">
+                                    <img src="..\src\eye-icon.png" alt="Toggle Password Visibility" class="eye-icon">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="forgot-password-wrapper">
+                            <a href="/passwort-zuruecksetzen">forgot password</a>
+                        </div>
+                        <div>
+                            <button type="submit" class="submit-button">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="right">
-        <div class="right-content">
-          <!-- Inhalt der rechten Hälfte // Bild wird durch CSS eingefügt -->
+        <div class="right">
+            <div class="right-content">
+                <!-- Inhalt der rechten Hälfte // Bild wird durch CSS eingefügt -->
+            </div>
         </div>
-      </div>
     </div>
     <script src="login.js"></script>
-  </body>
+</body>
 </html>

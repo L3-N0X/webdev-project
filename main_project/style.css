@@ -1,0 +1,27 @@
+:root{
+  /* Vordefinierte Farbcodes */
+  --dark_blue: #2D3250;
+  --blue: #424769;
+  --light_blue: #676C8F;
+  --orange: #FFB17A;
+  --white: #ffffff;
+}
+
+
+h3 {
+  color: var(--white);
+  font-family: Futura;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+p {
+  color: var(--white);
+  font-family: "BMW Group Light";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

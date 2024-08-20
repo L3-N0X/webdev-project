@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <script>
+        function validateLogin() {
+            // 1. Fasse die Variablen für Benutzer und Passwort in ein Dictionary zusammen und erstelle es so, dass du mehere Benutzer 
+            //    mit einem dazugehörigen Passwort speichern kannst
+
+            // Variable, in der mehrere Passwörter gespeichert werden können, die später in Kombination abgeglichen werden können
+            var userCredentials = {
+                'Benutzer1': 'Passwort1',
+                'Benutzer2': 'Passwort2'
+                // Hierbei handelt es sich um ein Dictionary und es können beliebig viele weitere Kombinationen wie folgt eingefügt werden:
+                // 'Benutzername': 'Passwort',
+            };
+
+            var usernameInput = document.getElementById('username').value;
+            var passwordInput = document.getElementById('password').value;
+
+            // 2. Schreibe jetzt deine Funktion so um, dass die eingebenen Daten mit dem Dictionary abgeglichen werden
+            if(userCredentials[usernameInput] === passwordInput) { // Prüfe, ob der eingegebene Benutzername im Objekt existiert und das jeweilige Passwort übereinstimmt
+                // 3. Ändere jetzt den Code so, dass der Nutzer statt der Nachricht auf die index.html-Seite weitergeleitet wird
+                window.location.href = 'index.html'; // Weiterleitung auf die Index-Seite 
+            } else {
+                alert('Benutzername oder Passwort falsch!');
+            }
+
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateLogin()">
+        <div>
+            <label for="username">Benutzername:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Passwort:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <a href="/passwort-zuruecksetzen">Passwort zurücksetzen</a>
+        </div>
+        <div>
+            <button type="submit">Einloggen</button>
+        </div>
+    </form>
+</body>
+</html>
