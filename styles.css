@@ -1,37 +1,89 @@
 :root {
-    --background: #2d3250;
-    --surface: #424769;
-    --hint: #676c8f;
-    --accent: #ffb17a;
-    --text: #ffffff;
+    --background: #1d1b1c;
+    --text: #f7f8f9;
+    --blue: #264653;
+    --green: #2a9d8f;
+    --yellow: #e9c46a;
+    --orange: #f4a261;
+    --red: #e76f51;
 }
 
 body {
     margin: 0;
     background-color: var(--background);
+    padding: 100px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--text);
+    font-size: 2em;
 }
 
-.navbar {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 50px;
+p {
+    font-size: 1em;
+    line-height: 0%;
+    font-weight: 300;
 }
 
-.navbar .icon {
-    font-size: 42px;
-    padding: 32px;
-    color: var(--accent);
-    cursor: pointer;
+h1 {
+    line-height: 0%;
 }
 
-.background {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-    filter: brightness(50%);
+.item {
+    padding: 50px;
+}
+
+.i1 {
+    background: var(--blue);
+}
+.i2 {
+    background: var(--green);
+}
+.i3 {
+    background: var(--yellow);
+}
+.i4 {
+    background: var(--orange);
+}
+.i5 {
+    background: var(--red);
+}
+
+#uebung-1 {
+    display: grid;
+
+    /************************************* Übung ***********************************/
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 400px 180px;
+    grid-template-areas:
+        "header header header"
+        "l m d"
+        "footer footer footer";
+    /********************************************************************************/
+}
+
+/********************************** Blaues Feld *********************************/
+#uebung-1 .i1 {
+    grid-area: header;
+}
+
+/********************************** Grünes Feld *********************************/
+#uebung-1 .i2 {
+    grid-area: l;
+}
+
+/********************************** Gelbes Feld *********************************/
+#uebung-1 .i3 {
+    grid-area: m;
+}
+
+/********************************** Oranges Feld ********************************/
+#uebung-1 .i4 {
+    grid-area: d;
+}
+
+/*********************************** Rotes Feld *********************************/
+#uebung-1 .i5 {
+    grid-area: footer;
 }
