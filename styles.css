@@ -59,6 +59,8 @@ h2 {
 
 #uebung-1 {
     display: grid;
+    border: 1px solid var(--text);
+    height: 500px;
 
     /************************************* Übung 1 **********************************/
     grid-template-columns: 1fr 1fr;
@@ -68,6 +70,8 @@ h2 {
 
 #uebung-2 {
     display: grid;
+    border: 1px solid var(--text);
+    height: 160px;
 
     /************************************* Übung 2 **********************************/
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -78,6 +82,7 @@ h2 {
 
 #uebung-3 {
     display: grid;
+    border: 1px solid var(--text);
 
     /************************************* Übung 3 **********************************/
     grid-template-columns: 10rem 20% 1fr 140px 140px;
@@ -86,6 +91,7 @@ h2 {
 
 #uebung-4 {
     display: grid;
+    border: 1px solid var(--text);
 
     /************************************* Übung 4 **********************************/
     grid-template-columns: 1fr 2fr;
@@ -96,6 +102,7 @@ h2 {
 
 #uebung-5 {
     display: grid;
+    border: 1px solid var(--text);
 
     /************************************* Übung 5 **********************************/
     grid-template-columns: 1fr 1fr 1fr;
@@ -134,6 +141,7 @@ h2 {
 
 #uebung-6 {
     display: grid;
+    border: 1px solid var(--text);
 
     /************************************* Übung 6 **********************************/
     grid-template-columns: repeat(3, 1fr);
@@ -144,49 +152,70 @@ h2 {
 
 #uebung-7 {
     display: flex;
+    border: 1px solid var(--text);
+    height: 200px;
 
     /************************************* Übung 7 **********************************/
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    /* flex-direction: row;  optional */
     /********************************************************************************/
+}
+
+#uebung-7 .item {
+    width: 50px;
+    height: 50px;
 }
 
 #uebung-8 {
     display: flex;
+    border: 1px solid var(--text);
+    height: 500px;
 
     /************************************* Übung 8 **********************************/
     flex-direction: column;
-    justify-content: space-around;
     align-items: stretch;
     /********************************************************************************/
 }
 
 #uebung-9 {
     display: flex;
+    border: 1px solid var(--text);
+    height: 200px;
 
     /************************************* Übung 9 **********************************/
     flex-direction: row-reverse;
     justify-content: center;
-    align-items: flex-end;
+    align-items: end;
     /********************************************************************************/
 }
 
 #uebung-10 {
     display: flex;
+    border: 1px solid var(--text);
+    height: 650px;
 
     /************************************* Übung 10 **********************************/
     flex-direction: column-reverse;
     justify-content: flex-start;
+    align-items: center;
     /********************************************************************************/
+}
+
+#uebung-10 .item {
+    width: 50px;
+    height: 50px;
 }
 
 #uebung-11 {
     display: flex;
+    border: 1px solid var(--text);
+    height: 480px;
 
     /************************************* Übung 11 **********************************/
     flex-wrap: wrap;
     justify-content: flex-end;
+    align-content: space-between;
     /********************************************************************************/
 }
 
@@ -196,16 +225,19 @@ h2 {
 
 #uebung-12 {
     display: flex;
+    border: 1px solid var(--text);
+    padding: 20px;
 
     /************************************* Übung 12 **********************************/
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 20px;
     /********************************************************************************/
 }
 
 #uebung-12 .item {
-    width: 70px;
+    width: 420px;
     height: 70px;
 }
 
