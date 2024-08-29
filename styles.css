@@ -31,6 +31,10 @@ h2 {
     line-height: 1.2em;
 }
 
+div {
+    overflow: hidden;
+}
+
 .item {
     padding: 50px;
     display: flex;
