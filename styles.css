@@ -67,7 +67,7 @@ div {
     height: 500px;
 
     /************************************* Übung 1 **********************************/
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: 1fr 1fr;
     /* grid-template-columns: repeat(2, 1fr); */
     /********************************************************************************/
 }
